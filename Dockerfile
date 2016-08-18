@@ -8,3 +8,6 @@ RUN apt-get update -qq && apt-get install -qqy \
 
 # Install Docker from Docker Inc. repositories.
 RUN curl -sSL https://get.docker.com/ | sh
+
+# start docker listening on host docker sock
+RUN docker daemon -H unix:///var/run/docker.sock
